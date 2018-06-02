@@ -1,6 +1,6 @@
 locale: "en-US"
 title: Strata # Title of your site
-url: "http://yourdomain.com" # the base hostname & protocol for your site
+url: "https://sfsoftwareist.com" # the base hostname & protocol for your site
 baseurl: "" # the subpath of your site, e.g. /blog/
 google_analytics_key: ""
 
@@ -12,9 +12,9 @@ description: > # this means to ignore newlines until "baseurl:"
 
 # Author details for the jekyll-seo-tag gem
 author:
-  name: Your Name
-  email: your-email@domain.com
-  twitter: # twitter username without the @ symbol
+  name: Tyler Casselman
+  email: tyler@13bit.io
+  twitter: tylerc230
 
 # Social details for the jekyll-seo-tag gem
 social:
@@ -29,6 +29,12 @@ gems:
   - "jekyll-seo-tag"
   - "jekyll-paginate"
   - "jekyll-sitemap"
+
+markdown: kramdown
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
 
 # Jekyll SEO Tag
 webmaster_verifications:
