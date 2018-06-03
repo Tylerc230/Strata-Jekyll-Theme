@@ -1,0 +1,36 @@
+---
+layout: post
+---
+              
+<img src="/images/fulls/IMG_0102.jpg" class="fit image">
+In my last post I explained some of the common anti-patterns that developers fall into. In this article I’d like to explore some architectural principles that help make code more robust and extensible. Like all ‘rules’ in software development, these are really only guidelines, so if something feels awkward or forced, it probably is.
+
+#### Law of Demeter
+
+The first principle I’d like to discuss is the Law of Demeter. Demeter is the greek god of software development (that’s not true). Demeter’s law or “The principle of least knowledge” provides guidelines on to which object another object may access. It states that an object ‘A’ implementing a method ‘m’ may invoke methods on: 1) itself (‘A’), 2) any objects passed as a parameter to ‘m’, or 3) any objects instantiated by ‘A’, either as a property or as a local variable. Instances of ‘A’ may not interact with any other objects; specifically ‘A’ shouldn’t invoke methods on objects returned from calls to other objects.
+
+As an example, something like `self.myObjectB.getC().doSomething()` should be avoided. Instead you might do something like `self.myObjectB.doSomethingToC()` (I hope you’re a little more creative with your method naming).
+
+At first this seems highly restrictive but the advantage is that you’re limiting the dependencies of your object; ‘A’ no longer needs to know anything about ‘C’. ‘C’ could be easily refactored or removed from the codebase and ‘A’ would not need any modification. The “surface area” of an object is comprised of all its methods _plus_ all of the methods of any objects it exposes publicly. By making ‘C’ private and modifying it through ‘B’s public methods, <span class="Apple-converted-space"></span> B’s surface area has been reduced. This makes it easier to reason how changes to ‘C’ will affect the rest of the codebase. Again, this is only a guideline and wont always be appropriate.
+
+#### DRY
+
+Ok, this one isn’t very obscure but it is often overlooked. It stands for Don’t Repeat Yourself. It means that redundant functionality should be factored out. Code gets duplicated when a feature is implemented in one part of the code, and then similar functionality is needed elsewhere. Instead of making the initial feature generic so that is will work in multiple places, the original implementation is copy/pasted to its new location, and potentilally modified slightly for its new purpose. The problem is that a bug in the original code must be fixed in two places. If additional functionality is added to one implementation, the other doesn’t reap the benefits. Code can be made more versatile in a number of ways. Reusable code can be achieved through generic/template functions if your language supports them, by extracting the generic functionality into its own methods and passing in the unique functionality via function pointers or closures, or by putting the generic code into a base class with unique functionality added to derived classes.
+
+#### KISS
+
+KISS stands for Keep It Simple, Stupid. While it sounds a little harsh, it is actually good advice. There is a tendency for developers to think their job is done once the code functions as designed. In reality working code is just the first step. From there the code needs to be boiled down and simplified. Are you using two data structures when you could accomplish the same thing with one? Are some properties of a class redundant? Has some operation been repeated in several places (i.e. is it DRY)? Should some logic be wrapped in its own class? Could a block of code be shortened and its intension be made more clear? By taking the time to simplify and refactor new code once it is working, the code will be easier to reason about and modify in the future.
+
+#### The Open/Closed Principle
+
+This principle states that classes and functions should be “Open for extension but closed for modification” meaning that it should be possible to extend the functionality of an existing class without having to open it up and modify it directly. An example of a class that violates this principle would be a ShapeRenderer class which draws different shapes to the screen and has the functionality for drawing each shape (drawSquare(), drawCircle() etc) added as methods to the ShapeRenderer. Any time a new type of shape is needed, the ShapeRendered class must be opened up and modified. What if rendering to a file is needed? The ShapeRenderer class would need to be modified for this as well. The problem is that the developer needs to understand the implementation details of the ShapeRenderer class completely in order to modify it. A better ShapeRenderer would be one that accepts different shape objects to be rendered. Each shape object would know how to render itself and ShapeRenderer would not have to know the specifics about each shape. To add a new triangle shape, ShapeRenderer wouldn’t have to be modified at all, the triangle drawing code would be implemented in Triangle, a subclass of Shape.
+
+Now lets say that we want to be able to render our shapes to a file instead of to the screen. The ShapeRenderer class could be modified to take a RenderTarget object. The RenderTarget subclass would be responsible for actually writing the renderings to the screen or to a file. This would make it simpler to add another render destination, such as a printer. A RenderTarget subclass would contain all the printer specific code. No need to modify ShapeRenderer.
+
+#### Single Responsibility Principle
+
+This principle states that a class should “have one reason to change”. I always had trouble with this definition. A class could have any number of reasons to change. The description seems too vague to be useful. To adhere to this principle, you kind of have to follow your instincts. Classes always have responsibilities, they are in charge of certain functionality. Ideally each class is only in charge of one specific task or a small collection of related tasks. If a class is in charge of multiple unrelated things it should be split up and they should communicate through some sort of interface. The problem with having 2 orthogonal pieces of functionality in the same class is that their implementations become intertwined. It becomes difficult to reason about one without understanding how the other works. Their implementations become tightly coupled and it becomes difficult to modify one without breaking the other. A good heuristic is that if a subset of methods and properties in a class all deal with one aspect of its functionality, they might be a good candidate for pulling out into their own class.
+
+#### Conclusion
+
+That is the short list of princilples I’ve used to help guide my work. There are many others but these are the ones which resonate with me and I hope you find them useful as well. As a word of caution, I find that whenever I learn a new paradigm or discover a new axiom, I tend to over apply it, so like everything in life, finding balance is key.
