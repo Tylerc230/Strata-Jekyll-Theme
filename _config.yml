@@ -36,6 +36,8 @@ kramdown:
   input: GFM
   syntax_highlighter: rouge
 
+include: [_pages]
+
 # Jekyll SEO Tag
 webmaster_verifications:
   google: # 1234
