@@ -1,8 +1,8 @@
 ---
 layout: post
+title: Pt. 3 Swift Testability By Example
 ---
 <img src="/images/fulls/DSC01650.jpg" class="fit image">
-
 In [my last article](https://www.sfsoftwareist.com/2018/05/08/testable-swift/), I discuss the easiest path to testable Swift. In that article I list qualities that make tests valuable. Additionally, I show that business and application logic should be decoupled from volatile or asynchronous dependencies. Now I’d like to focus on the “State” object that houses all of this logic and illustrate some design decisions that will make it easier to test.  
 An experienced tester knows that certain features are trivial to test while others must be mangled and distorted before they yield to testing. Tests that are easy to write are ones that require little or no arrangement code, don’t require new classes to enable testing (ie. mocks or stubs) and produce easily verifiable output. The easiest thing in the world to test is a pure function:
 

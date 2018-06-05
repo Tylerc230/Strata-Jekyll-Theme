@@ -1,7 +1,7 @@
 ---
 layout: post
+title: Pt. 1 Effective Unit Testing in Swift
 ---
-              
 <img src="/images/fulls/IMG_0071.jpg" class="fit image">
 I’m coming clean. I’m embarrassed to admit it, but I’ve been a professional software developer for twelve years and have hardly written any tests. I’ve embraced the unit testing cult a few times, but every time I did, I spent more time hacking my code to make it testable than writing new features. My velocity went into the toilet, my once beautiful code became riddled with concessions to make it testable, tests would break after small changes, and worst of all, they never seemed to surface any genuine defects. I would eventually give up with the excuse that “iOS code isn’t testable” or “unit tests are for people who write bad code”. Such hubris!
 

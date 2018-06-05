@@ -1,7 +1,7 @@
 ---
 layout: post
+title: iOS Code Smells I’ve Smelt — Common Pitfalls of a Junior iOS Developer
 ---
-              
 <img src="/images/fulls/IMG_0066.jpg" class="fit image">
 Being a freelance iOS developer, I get the opportunity to work on a variety of projects, written by developers with varying degrees of experience. This has given me the opportunity to catalog the most common iOS anti patterns or [‘Code smells’](http://en.wikipedia.org/wiki/Code_smell "'Code Smell'") I’ve smelt. I will enumerate the most common smells and some possible solutions to guide you on your path to mobile app nirvana.
 

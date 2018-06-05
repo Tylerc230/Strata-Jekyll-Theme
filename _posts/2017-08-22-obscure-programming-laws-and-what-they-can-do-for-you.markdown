@@ -1,7 +1,6 @@
 ---
 layout: post
 ---
-              
 <img src="/images/fulls/IMG_0102.jpg" class="fit image">
 In my last post I explained some of the common anti-patterns that developers fall into. In this article I’d like to explore some architectural principles that help make code more robust and extensible. Like all ‘rules’ in software development, these are really only guidelines, so if something feels awkward or forced, it probably is.
 

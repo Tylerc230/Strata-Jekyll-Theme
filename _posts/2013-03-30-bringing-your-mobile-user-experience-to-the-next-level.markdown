@@ -1,7 +1,6 @@
 ---
 layout: post
 ---
-              
 <img src="/images/fulls/DSC00695.jpg" class="fit image">
 Developers, repeat after me, “My app is not a web page”. Again! “My app is not a wep page”. It seems that most developers are writing their mobile apps like they did web pages in the 1990’s. They makes requests to the server, put the app into a waiting state, and display the response in the UI. If they are offline, an error is reported to the user and the app is unusable. This experience is fine for a webapp in the browser with little or no local storage and a ubiquitous network connection, but falls short in the mobile world.
 

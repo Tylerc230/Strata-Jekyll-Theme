@@ -1,16 +1,12 @@
 ---
 layout: post
 ---
-              
 <img src="/images/fulls/IMG_0016.jpg" class="fit image">
-
-I am a independent iOS developer located in San Francisco. You can find out more about my work at [www.casselmanconsulting.com](http://www.casselmanconsulting.com).
-
 In my previous [post](http://sfsoftwareist.com/2011/06/25/sequencing/ "post") I taught you how to wrangle your game initialization code in order to keep it from breaking with every refactor. Today, I’d like to talk about event handling and how to get a handle on it (pun intended). If you’re anything like me, your event handling code (generally your touchesEnded:withEvent:) is the longest method in your whole application; littered with switch statements, if/else clauses and enough boolean flags to make George Boole turn over in his grave.
 
 It starts out simple enough, you add some code to your event handling method to kill zombies or harvest crops or what have you. Then you decide you want an edit mode where users can move cows around or redecorate their farm, so you add an ‘inEditMode’ flag. You execute the appropriate code based on that flag in an if/else statement. Additionally, you realize some functionality (like scrolling the world, for instance) happens in edit mode _and_ in regular mode, so you put that functionality right after your if/else block; allowing it to be executed in either mode. A while later, you decide you want to be able to scroll in edit mode, but only if the user isn’t dragging a farm around the map. You create an ‘isDragging’ flag to indicate whether the user is dragging an object in the world; if so the ‘touchMoved’ event drags the object, if not, it causes the world to scroll.
 
-This goes on for many months and eventually your ‘touchEnded:’ method is four screens long, stepping though is takes 10 minutes and you have no idea what the code is doing. You fear making changes to the monolithic method because altering edit mode will break regular game mode and vis versa. The ‘inEditMode’ flag is set to ‘false’ and ‘isDragging’ is set to ‘true’, which is logically impossible, and you have no idea how it happend. And this is where the hair pulling begins.
+This goes on for many months and eventually your ‘touchEnded:’ method is four screens long, stepping though is takes 10 minutes and you have no idea what the code is doing. You fear making changes to the monolithic method because altering edit mode will break regular game mode and vis versa. The ‘inEditMode’ flag is set to ‘false’ and ‘isDragging’ is set to ‘true’, which is logically impossible, and you have no idea how it happened. And this is where the hair pulling begins.
 
 Do not fear. I am here to save you from your premature balding. I propose using a state machine to separate event handling code into logical pieces which can be swapped in and out depending on the state of your game at run time. If your knowledge of this particular design pattern is a little rusty, allow me to describe it briefly.
 

@@ -1,7 +1,7 @@
 ---
 layout: post
+title: Pt. 2 Testable Swift
 ---
-              
 <img src="/images/fulls/DSC00762.jpg" class="fit image">
 In my [last article](http://www.sfsoftwareist.com/2017/10/04/effective-testing/) I touched on a few ideas to make Swift testable. Here I’d like to demonstrate these ideas by implementing a [hypothetical feature.](https://github.com/Tylerc230/CleanArchitectureSample) The feature is written using TDD and exhibits these virtuous patterns. Before I go on, I’d like to describe the attributes which make a test good.
 

@@ -1,7 +1,6 @@
 ---
 layout: post
 ---
-              
 <img src="/images/fulls/IMG_0100.jpg" class="fit image">
 _Enlightenment is intimacy with all things._ —Ehei Dogen (1200-1253)
 
