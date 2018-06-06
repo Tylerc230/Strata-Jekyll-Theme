@@ -44,6 +44,4 @@ The client then writes the new objects to its own database; using guids to updat
 
 As always, you can find the latest version of this lib at [https://github.com/Tylerc230/offline_sync_blog_3](https://github.com/Tylerc230/offline_sync_blog_3). Be sure to look at the example folder as this is where the server portion resides. Remember to set the base url of SyncStorageManager to your sever url. Please report any bugs you find to me.
 
-If you’re looking for an iOS developer for your next project you, can find out more about my work at [www.casselmanconsulting.com](http://www.casselmanconsulting.com/).
-
 The inspiration for this lib comes from this SO post: [http://stackoverflow.com/questions/5035132/how-to-sync-iphone-core-data-with-web-server-and-then-push-to-other-devices/5052208#5052208](http://stackoverflow.com/questions/5035132/how-to-sync-iphone-core-data-with-web-server-and-then-push-to-other-devices/5052208#5052208)

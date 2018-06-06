@@ -45,5 +45,3 @@ Once these 2 lines above have been executed, parseUserData will be called and th
 As you can see from the above example, all my dependencies are clearly defined in one place, the order in which the dependencies are completed doesn’t matter, and I can change the order that code executes in without breaking the dependency. With the Sequencer class in your programmer’s tool belt, you will sleep easy knowing that that one last change you made before pushing to production didn’t break your game’s setup process.
 
 You can get the latest bits at [https://github.com/Tylerc230/sequencer_blog_1](https://github.com/Tylerc230/sequencer_blog_1 "Github")
-
-If you’re looking for an iOS developer for your next project you, can find out more about my work at [www.casselmanconsulting.com](http://www.casselmanconsulting.com).

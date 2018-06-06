@@ -3,7 +3,7 @@ layout: post
 title: Pt. 3 Swift Testability By Example
 ---
 <img src="/images/fulls/DSC01650.jpg" class="fit image">
-In [my last article](https://www.sfsoftwareist.com/2018/05/08/testable-swift/), I discuss the easiest path to testable Swift. In that article I list qualities that make tests valuable. Additionally, I show that business and application logic should be decoupled from volatile or asynchronous dependencies. Now I’d like to focus on the “State” object that houses all of this logic and illustrate some design decisions that will make it easier to test.  
+In [my last article](/2018/05/08/pt-2-testable-swift/), I discuss the easiest path to testable Swift. In that article I list qualities that make tests valuable. Additionally, I show that business and application logic should be decoupled from volatile or asynchronous dependencies. Now I’d like to focus on the “State” object that houses all of this logic and illustrate some design decisions that will make it easier to test.  
 An experienced tester knows that certain features are trivial to test while others must be mangled and distorted before they yield to testing. Tests that are easy to write are ones that require little or no arrangement code, don’t require new classes to enable testing (ie. mocks or stubs) and produce easily verifiable output. The easiest thing in the world to test is a pure function:
 
 ``` swift
@@ -100,6 +100,6 @@ class LoginViewModel {
 ```
 _disclaimer: I have no idea if any of this compiles_  
 
-I’ve left out some details for brevity but you can see how the logic of _what_ to do is embedded in the state object while _how_ to do it is found elsewhere. Of course, this is a toy example but you can imagine the state object will become more complex as requirements are added (eg validation logic, error cases). This will be contained and kept separate from the IO represented by the `Command` objects. You can find more examples of these patterns [here](https://github.com/Tylerc230/CleanArchitectureSample).
+I’ve left out some details for brevity but you can see how the logic of _what_ to do is embedded in the state object while _how_ to do it is found elsewhere. Of course, this is a toy example but you can imagine the state object will become more complex as requirements are added (eg. validation logic, error cases). This will be contained and kept separate from the IO represented by the `Command` objects. You can find more examples of these patterns [here](https://github.com/Tylerc230/CleanArchitectureSample).
 
 In this article I’ve outlined some specific examples of code that is easily testable. I’ve also given some pointers on how to restructure code to be tested painlessly. Thanks for reading!

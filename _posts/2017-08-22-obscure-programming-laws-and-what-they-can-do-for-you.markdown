@@ -6,7 +6,7 @@ In my last post I explained some of the common anti-patterns that developers fal
 
 #### Law of Demeter
 
-The first principle I’d like to discuss is the Law of Demeter. Demeter is the greek god of software development (that’s not true). Demeter’s law or “The principle of least knowledge” provides guidelines on to which object another object may access. It states that an object ‘A’ implementing a method ‘m’ may invoke methods on: 1) itself (‘A’), 2) any objects passed as a parameter to ‘m’, or 3) any objects instantiated by ‘A’, either as a property or as a local variable. Instances of ‘A’ may not interact with any other objects; specifically ‘A’ shouldn’t invoke methods on objects returned from calls to other objects.
+The first principle I’d like to discuss is the Law of Demeter. Demeter is the Greek god of software development (that’s not true). Demeter’s law or “The principle of least knowledge” provides guidelines on to which object another object may access. It states that an object ‘A’ implementing a method ‘m’ may invoke methods on: 1) itself (‘A’), 2) any objects passed as a parameter to ‘m’, or 3) any objects instantiated by ‘A’, either as a property or as a local variable. Instances of ‘A’ may not interact with any other objects; specifically ‘A’ shouldn’t invoke methods on objects returned from calls to other objects.
 
 As an example, something like `self.myObjectB.getC().doSomething()` should be avoided. Instead you might do something like `self.myObjectB.doSomethingToC()` (I hope you’re a little more creative with your method naming).
 
@@ -14,7 +14,7 @@ At first this seems highly restrictive but the advantage is that you’re limiti
 
 #### DRY
 
-Ok, this one isn’t very obscure but it is often overlooked. It stands for Don’t Repeat Yourself. It means that redundant functionality should be factored out. Code gets duplicated when a feature is implemented in one part of the code, and then similar functionality is needed elsewhere. Instead of making the initial feature generic so that is will work in multiple places, the original implementation is copy/pasted to its new location, and potentilally modified slightly for its new purpose. The problem is that a bug in the original code must be fixed in two places. If additional functionality is added to one implementation, the other doesn’t reap the benefits. Code can be made more versatile in a number of ways. Reusable code can be achieved through generic/template functions if your language supports them, by extracting the generic functionality into its own methods and passing in the unique functionality via function pointers or closures, or by putting the generic code into a base class with unique functionality added to derived classes.
+Ok, this one isn’t very obscure but it is often overlooked. It stands for Don’t Repeat Yourself. It means that redundant functionality should be factored out. Code gets duplicated when a feature is implemented in one part of the code, and then similar functionality is needed elsewhere. Instead of making the initial feature generic so that is will work in multiple places, the original implementation is copy/pasted to its new location, and potentially modified slightly for its new purpose. The problem is that a bug in the original code must be fixed in two places. If additional functionality is added to one implementation, the other doesn’t reap the benefits. Code can be made more versatile in a number of ways. Reusable code can be achieved through generic/template functions if your language supports them, by extracting the generic functionality into its own methods and passing in the unique functionality via function pointers or closures, or by putting the generic code into a base class with unique functionality added to derived classes.
 
 #### KISS
 
@@ -32,4 +32,4 @@ This principle states that a class should “have one reason to change”. I alw
 
 #### Conclusion
 
-That is the short list of princilples I’ve used to help guide my work. There are many others but these are the ones which resonate with me and I hope you find them useful as well. As a word of caution, I find that whenever I learn a new paradigm or discover a new axiom, I tend to over apply it, so like everything in life, finding balance is key.
+That is the short list of principles I’ve used to help guide my work. There are many others but these are the ones which resonate with me and I hope you find them useful as well. As a word of caution, I find that whenever I learn a new paradigm or discover a new axiom, I tend to over apply it, so like everything in life, finding balance is key.
