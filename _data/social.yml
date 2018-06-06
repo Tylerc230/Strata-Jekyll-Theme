@@ -1,3 +1,7 @@
+- name: Work
+  link: 'https://www.13bit.io'
+  social_icon: rocket
+  new_window: true
 - name: GitHub
   link: 'https://github.com/Tylerc230'
   social_icon: GitHub
