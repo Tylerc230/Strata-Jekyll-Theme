@@ -10,6 +10,9 @@ layout: default
       </header>
       <section>
         {{ post.content }}
+        <p>
+        <strong>I'm a freelance iOS developer based in San Francisco. Feel free to <a href=mailto:{{ site.author.email }}>contact me</a>.</strong>
+        </p>
         <p class="editor-link"><a href="cloudcannon:collections/{{ post.path }}" class="button"><strong>&#9998;</strong> Edit post</a></p>
       </section>
     {% endfor %}
