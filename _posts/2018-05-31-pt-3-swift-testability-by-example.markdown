@@ -103,3 +103,5 @@ _disclaimer: I have no idea if any of this compiles_
 I’ve left out some details for brevity but you can see how the logic of _what_ to do is embedded in the state object while _how_ to do it is found elsewhere. Of course, this is a toy example but you can imagine the state object will become more complex as requirements are added (eg. validation logic, error cases). This will be contained and kept separate from the IO represented by the `Command` objects. You can find more examples of these patterns [here](https://github.com/Tylerc230/CleanArchitectureSample).
 
 In this article I’ve outlined some specific examples of code that is easily testable. I’ve also given some pointers on how to restructure code to be tested painlessly. Thanks for reading!
+
+Edit: Here I've been carrying on about separating logic and IO, using value types and avoiding mutation like it was some great discovery but turns out apple outlined a lot of these [ideas](https://developer.apple.com/videos/play/wwdc2017/414/) at WWDC 2017. 🤦‍♀️ If you haven't caught that talk yet, give it a watch. It's full of good information.
