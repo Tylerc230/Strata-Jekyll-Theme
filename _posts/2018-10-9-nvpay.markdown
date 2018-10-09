@@ -1,0 +1,15 @@
+---
+layout: post
+title: WWDC Refactored
+---
+<img src="/images/fulls/IMG_0087.jpg" class="fit image">
+
+Lately I've been learning a lot about UI design and spending a lot of time on Dribbble<link>, the site where designers go to show off their latest creations. My first thought is always 'Whoa, that looks so cool!' and my second thought is always 'OMG, I have no idea how to code that up'. This has inspired me to try to close the gap between what designers are creating in After Effects and what I'm able to do using UIKit.
+In order to expand my abilities and challenge myself, I decided to take an interface design from Dribbble and implement it in iOS. I chose something that wasn't too complicated and something with a few different types of animation to experiment with. The one I chose was the [VNPAY interaction](https://dribbble.com/shots/3829985-VNPAY-App-Interactions) by [Ramotion](https://dribbble.com/Ramotio://dribbble.com/Ramotion). Ramotion does some amazing work (and they're SF locals!).
+<Add their gif here center aligned>
+
+This is their final product. It was probably mocked up in After Effects and rendered to a GIF.(<- this could be a quote under the image)
+The mockup is a simple 2 screen animation. There is a login screen which transitions to a dashboard. It uses a Google Material Design aesthetic, where interactive controls appear to float above the rest of the UI. I particularly like the animated dark blue stripe on the login screen so this is what I decided to tackle first.
+
+I admit that I picked this interaction partially because I wanted to experiment with Lottie<link> and I thought the stripe animation would be a good first attempt. I was seriously impressed. Briefly, Lottie enables exporting vector based animations from After Effects into iOS or Android. Learning After Effects and setting up the exporting consumed about half the time I spent on this project but it was worth it. My blue stripe doesn't do justice to Lottie's power. Head on over to their site to see some amazing animations (wait don't go yet!).
+
