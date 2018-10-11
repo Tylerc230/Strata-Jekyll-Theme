@@ -1975,6 +1975,19 @@
 		}
 
 /* Image */
+  .quoted-image {
+    max-width:60%;
+    float:right;
+    margin: 0 0 1em 1.5em;
+    top: 0.25em;
+    display: inline-block;
+    position: relative;
+    display: inline-block
+  }
+
+  .quoted-image img {
+    width:100%;
+  }
 
 	.image {
 		border-radius: 0.35em;
