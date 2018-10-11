@@ -1,0 +1,25 @@
+---
+layout: post
+title: Interaction Experimentation
+---
+<img src="/images/fulls/IMG_0087.jpg" class="fit image">
+
+Lately I've been learning UI design basics and spending time on [Dribbble](https://dribbble.com), as site where designer types like to hang out. My first thought when seeing the amazing interactions they produce is always 'Whoa, that looks so cool!' and my second thought is always 'Whoa, I have no idea how to implement that'. These designs have inspired me to close the gap between what designers are creating in After Effects and what I'm able to recreate on the phone.
+In order to expand my abilities and challenge myself, I decided to take a designs from Dribbble and implement it in Swift. I chose something that wasn't too complicated and had a variety of animations. The one I chose was the [VNPAY interaction](https://dribbble.com/shots/3829985-VNPAY-App-Interactions) by [Ramotion](https://dribbble.com/Ramotion). Ramotion does amazing work (and they're SF locals!).
+<img src="/images/interaction.gif" class="image.thumb">
+<Add their gif here center aligned>
+
+This is their final product. It was probably mocked up in After Effects and rendered to a GIF.(<- this could be a quote under the image)
+This app concept is a simple 2 screen interaction. It contains a login view which transitions to a dashboard. It utilizes a Google Material Design style, where interactive controls appear to float above the rest of the UI. I particularly like the animated dark blue stripe on the login screen so this is what I decided to implement first.
+
+I admit that I picked this interaction partially because I wanted to learn how to use [Lottie](https://airbnb.design/lottie/) and I thought the stripe animation would be a good experiment. I was seriously impressed. Briefly, Lottie enables exporting vector based animations from After Effects into iOS or Android. This means you have all the power of AE animations in your iOS projects.
+Learning After Effects and setting up animation exporting consumed almost half the time I spent on this project but it was worth it. My blue stripe doesn't do justice to Lottie's power. Head on over to their site to see some of Lottie's amazing abilities (but don't go yet!).
+
+For the rounded controls and buttons, initially I had integrated [material-components-ios](https://github.com/material-components/material-components-ios). This is Google's implementation of Material Design for UIKit and is a rather large library. I could imagine using it if I was going all in on Material Design but for this project, it seemed a little heavy handed as I only needed a few shadows and rounded corners. In the end, I ended up dropping it and rolling my own components.
+
+Next, to implement the actual animations, I tried [Stellar](https://github.com/AugustRush/Stellar). Initially I had high hopes for this library. It was well documented, had a nice interface and seemed quite powerful. I struggled to get it to integrate (the maintainer stopped supporting it a few Swifts ago), it was difficult to make simple animations work properly and most importantly, it didn't take advantage of the more modern UIViewPropertyAnimator class which I was interested to learn.
+
+Eventually I ended up dropping Stellar and rolling my own. Né [Disco](https://github.com/Tylerc230/Disco). Disco is a thin wrapper around UIViewPropertyAnimator. It simply adds a fluent interface to property animator.
+
+Since we're on the topic of libraries I created for this project, I'd like to introduce [Choreo](https://github.com/Tylerc230/Choreo). Choreo doesn't do any animation on its own. It simply choreographs the animations between several views. Users of the library can specify the amount of time the entire animation should take and the start and duration of each view's animation and let it run. Like Disco, I intend to spend more time polishing this up in the future.
+
