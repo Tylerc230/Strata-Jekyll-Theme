@@ -19,11 +19,11 @@ This app concept is a simple 2 screen interaction. It contains a login view whic
 
 I admit that I picked this interaction partially because I wanted to learn how to use [Lottie](https://airbnb.design/lottie/) and I thought the stripe animation would be a good first experience. I was seriously impressed. Briefly, Lottie enables exporting vector based animations from After Effects into iOS or Android. This means you have all the power of AE animations in your iOS projects.
 Learning After Effects and setting up animation exporting consumed almost half the time I spent on this project but it was worth it. My blue stripe doesn't do justice to Lottie's power. Head on over to their site to see some of Lottie's amazing abilities (but not yet!).
-<div class="quoted-image" style="float:left;margin: 0 1.5em 1em 0;width:40%">
-    
-  <img src="/images/vnpay.gif" class="image" >
+<div class="quoted-image"  style="float:left;margin: 0 1.5em 1em 0;width:40%">
+ <video autoplay="autoplay" loop="loop" controls="controls" width="100%" name="My VNPay" src="/images/fulls/VNPay_rendered.mp4"></video>   
+  <!--<img src="/images/vnpay.gif" class="image" >-->
   <em>
-    The video is a little choppy but, on the device, the animations are buttery smooth
+    I sped up the boring bits (like my slow typing), but the animations are running at normal speed.
   </em>
 </div>
 To the left you can see my [implementation](https://github.com/Tylerc230/VNPay). For the rounded controls and buttons, initially I had integrated [material-components-ios](https://github.com/material-components/material-components-ios). This is Google's implementation of Material Design for UIKit and is a rather large library. I could imagine using it if I was going all in on Material Design. For this project, however, it seemed a little heavy handed as I only needed a few shadows and rounded corners. In the end, I ended up dropping it and rolling my own components.
