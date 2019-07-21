@@ -1,1 +1,2 @@
-scp -r _site/. casselmanconsult@ftp3.ftptoyoursite.com:/www.sfsoftwareist.com/web/content
+bundle _2.0.1_ install
+git push
